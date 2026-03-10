@@ -3,7 +3,7 @@
  * Plugin Name: Genesis Simple Share
  * Plugin URI: https://wordpress.org/plugins/genesis-simple-share/
  * Description: A simple sharing plugin using the Share script.
- * Version: 1.2.2
+ * Version: 1.2.3
  * Author: OsomPress
  * Author URI: https://www.osompress.com
  *
@@ -17,24 +17,20 @@ if ( ! defined( 'ABSPATH' ) ) {
 	die( esc_html__( 'Sorry, you are not allowed to access this page directly.', 'genesis-simple-share' ) );
 }
 
-define( 'GENESIS_SIMPLE_SHARE_VERSION', '1.2.1' );
+define( 'GENESIS_SIMPLE_SHARE_VERSION', '1.2.3' );
 define( 'GENESIS_SIMPLE_SHARE_PATH', plugin_dir_path( __FILE__ ) );
 define( 'GENESIS_SIMPLE_SHARE_INC', plugin_dir_path( __FILE__ ) . '/includes/' );
 define( 'GENESIS_SIMPLE_SHARE_URL', plugins_url( '', __FILE__ ) );
 
-add_action( 'init', 'genesis_simple_share_init', 99 );
-
+add_action( 'genesis_init', 'genesis_simple_share_init', 99 );
 /**
- * Loads plugin text domain and required files. Uses init instead of genesis_init to avoid loading too early.
+ * Loads plugin required files.
  *
  * @since 0.1.0
- * changed on version 1.2.2
- *
+ * changed on version 1.2.3
  * @uses GENESIS_SIMPLE_SHARE_INC
  */
 function genesis_simple_share_init() {
-
-	load_plugin_textdomain( 'genesis-simple-share', false, GENESIS_SIMPLE_SHARE_PATH . '/languages/' );
 
 	if ( is_admin() && class_exists( 'Genesis_Admin_Boxes' ) ) {
 		require_once GENESIS_SIMPLE_SHARE_INC . 'class-genesis-simple-share-boxes.php';
@@ -42,4 +38,16 @@ function genesis_simple_share_init() {
 	} else {
 		require_once GENESIS_SIMPLE_SHARE_INC . 'class-genesis-simple-share-front-end.php';
 	}
+}
+
+add_action( 'init', 'genesis_simple_share_translations_init', 99 );
+/**
+ * Loads plugin text domain. Uses init instead of genesis_init to avoid loading too early.
+ *
+ * @since 0.1.0
+ * changed on version 1.2.3
+ * @uses GENESIS_SIMPLE_SHARE_PATH
+ */
+function genesis_simple_share_translations_init() {
+	load_plugin_textdomain( 'genesis-simple-share', false, GENESIS_SIMPLE_SHARE_PATH . '/languages/' );
 }
