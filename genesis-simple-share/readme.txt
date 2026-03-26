@@ -2,8 +2,8 @@
 Contributors: nathanrice, studiopress, wpmuguru, nick_thegeek, bgardner, marksabbath, osompress, esther_sola, nahuai
 Tags: genesis, share, share buttons, social
 Requires at least: 3.7
-Tested up to: 6.9
-Stable tag: 1.2.3
+Tested up to: 7.0
+Stable tag: 1.2.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -30,6 +30,9 @@ https://github.com/copyblogger/genesis-simple-share/wiki/Usage-Tips
 
 
 == Changelog ==
+
+= 1.2.4 =
+* Iteration on multisite compatibility and translation loading improvements.
 
 = 1.2.3 =
 * Improve multisite compatibility.
