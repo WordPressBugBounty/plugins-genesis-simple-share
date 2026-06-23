@@ -3,7 +3,7 @@ Contributors: nathanrice, studiopress, wpmuguru, nick_thegeek, bgardner, marksab
 Tags: genesis, share, share buttons, social
 Requires at least: 3.7
 Tested up to: 7.0
-Stable tag: 1.2.5
+Stable tag: 1.2.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -30,6 +30,10 @@ https://github.com/copyblogger/genesis-simple-share/wiki/Usage-Tips
 
 
 == Changelog ==
+
+= 1.2.6 =
+* Removed leftover references to the retired proxy endpoint and disabled obsolete share counters.
+* Removed the obsolete Hide Count setting and tidied the share button preview.
 
 = 1.2.5 =
 * Security hardening: removed unused server-side proxy endpoint.

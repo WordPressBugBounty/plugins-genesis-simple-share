@@ -54,7 +54,7 @@ class Genesis_Simple_Share_Preview {
 		$icons = get_option(
 			'genesis_simple_share_sort',
 			array(
-				'main' => 'genesis_simple_share_google_plus,genesis_simple_share_facebook,genesis_simple_share_twitter,genesis_simple_share_pinterest,genesis_simple_share_linkedin,genesis_simple_share_stumbleupon',
+				'main' => 'genesis_simple_share_facebook,genesis_simple_share_twitter,genesis_simple_share_pinterest,genesis_simple_share_linkedin',
 			)
 		);
 
@@ -64,10 +64,6 @@ class Genesis_Simple_Share_Preview {
 
 		foreach ( $icons as $icon ) {
 			switch ( $icon ) {
-
-				case 'genesis_simple_share_google_plus':
-					$icon_sort[] = 'googlePlus';
-					break;
 
 				case 'genesis_simple_share_facebook':
 					$icon_sort[] = 'facebook';
@@ -83,10 +79,6 @@ class Genesis_Simple_Share_Preview {
 
 				case 'genesis_simple_share_linkedin':
 					$icon_sort[] = 'linkedin';
-					break;
-
-				case 'genesis_simple_share_stumbleupon':
-					$icon_sort[] = 'stumbleupon';
 					break;
 
 			}
@@ -152,9 +144,6 @@ class Genesis_Simple_Share_Preview {
 
 			$div_id = strtolower( $icon . '-' . $location . '-' . $id );
 
-			// Disable the counter if the option is set or is the Facebook.
-			$disable_count = genesis_get_option( 'general_disable_count', 'genesis_simple_share' ) || ( 'facebook' === $icon ) ? 'disableCount: true,' : '';
-
 			// media.
 			$button = '';
 
@@ -163,10 +152,9 @@ class Genesis_Simple_Share_Preview {
 					share: {
 						%s: true
 					},
-					urlCurl: '%s',
 					enableHover: false,
 					enableTracking: true,
-					%s
+					disableCount: true,
 					buttons: { %s },
 					click: function(api, options){
 						api.simulateClick();
@@ -175,8 +163,6 @@ class Genesis_Simple_Share_Preview {
 				});\n",
 				$div_id,
 				$icon,
-				GENESIS_SIMPLE_SHARE_URL . '/assets/js/sharrre/sharrre.php',
-				$disable_count,
 				$button,
 				$icon
 			);

@@ -3,7 +3,7 @@
  * Plugin Name: Genesis Simple Share
  * Plugin URI: https://wordpress.org/plugins/genesis-simple-share/
  * Description: A simple sharing plugin using the Share script.
- * Version: 1.2.5
+ * Version: 1.2.6
  * Author: OsomPress
  * Author URI: https://www.osompress.com
  *
@@ -22,7 +22,7 @@ if (!defined("ABSPATH")) {
 	);
 }
 
-define("GENESIS_SIMPLE_SHARE_VERSION", "1.2.5");
+define("GENESIS_SIMPLE_SHARE_VERSION", "1.2.6");
 define("GENESIS_SIMPLE_SHARE_PATH", plugin_dir_path(__FILE__));
 define("GENESIS_SIMPLE_SHARE_INC", plugin_dir_path(__FILE__) . "/includes/");
 define("GENESIS_SIMPLE_SHARE_URL", plugins_url("", __FILE__));

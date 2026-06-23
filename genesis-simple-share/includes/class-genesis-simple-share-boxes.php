@@ -50,7 +50,6 @@ class Genesis_Simple_Share_Boxes extends Genesis_Admin_Boxes {
 				'general_appearance'   => 'filled',
 				'general_position'     => 'before_content',
 				'general_post'         => 1,
-				'general_disble_count' => 0,
 				'facebook'             => 1,
 				'twitter'              => 1,
 				'pinterest'            => 1,
@@ -91,7 +90,6 @@ class Genesis_Simple_Share_Boxes extends Genesis_Admin_Boxes {
 	public function sanitizer_filters() {
 
 		$one_zero = array(
-			'googlePlus',
 			'facebook',
 			'twitter',
 			'pinterest',
@@ -293,8 +291,6 @@ class Genesis_Simple_Share_Boxes extends Genesis_Admin_Boxes {
 
 					$this->position( $id );
 
-					$this->disable_count( $id );
-
 					$this->post_type_checkbox( $id );
 
 					do_action( 'genesis_simple_share_admin_table_after_rows' );
@@ -417,19 +413,6 @@ class Genesis_Simple_Share_Boxes extends Genesis_Admin_Boxes {
 			)
 		);
 
-	}
-
-	/**
-	 * Outputs the checkbox to disable the count.
-	 *
-	 * @access public
-	 *
-	 * @param mixed $id Count Id.
-	 *
-	 * @return void
-	 */
-	public function disable_count( $id ) {
-		$this->checkbox_table( $id . '_disable_count', __( 'Hide Count', 'genesis-simple-share' ) );
 	}
 
 	/**
